@@ -1,6 +1,6 @@
-# CPU Usage Monitor and Password Strength Checker
+# CPU Usage Monitor, Password Strength Checker, and Configuration Manager
 
-This project contains two Python scripts: one for monitoring CPU usage and another for checking password strength.
+This project contains three Python scripts: one for monitoring CPU usage, another for checking password strength, and another for managing configuration settings.
 
 # Prerequisites
 
@@ -10,6 +10,7 @@ This project contains two Python scripts: one for monitoring CPU usage and anoth
 
 - `password_strength.py`: A script to check the strength of a password.
 - `cpu_percent.py`: A script to monitor CPU usage and alert if it exceeds a certain threshold.
+- `config_manager.py`: A script to manage configuration settings for the other scripts.
 
 ## password_strength
 
@@ -43,7 +44,7 @@ print(check_password_strength("Password123@#")) # Strong
 - In this program continuously monitor the CPU usage of the local machine.
 - If the CPU usage exceeds a predefined threshold (e.g., 80%), an alert message should be displayed.
 - The program will run indefinitely until interrupted.
-- he program should include appropriate error handling to handle exceptions that may arise during the monitoring process.
+- The program has include appropriate error handling to handle exceptions that may arise during the monitoring process.
 
 ### Prerequisites
 
@@ -61,3 +62,44 @@ CPU usage is normal: 20.5 %
 Alert! CPU usage exceeds threshold: 90.2 %
 
 ![output of second question](./media/imag2.png)
+
+## config_manager
+
+This script manages configuration settings for the other scripts using a Flask web server.
+
+### Prerequisites
+
+```
+pip install flask
+pip install configparser
+```
+
+### Run Script
+
+```sh
+python config_manager.py
+```
+
+### Examples
+
+1. Start the Flask server:
+    
+    ```sh
+    python config_manager.py
+    ```
+
+2. Access the configuration data via the `/config` endpoint: in your web browser or using a tool like `curl` or `Postman`.
+    
+    ```
+    http://127.0.0.1:5000/config
+    ```
+
+    ![](./media/imag3.png)
+
+### Code Explanation
+
+- `read_config(file_path)`: Reads the configuration file and returns a `ConfigParser` object.
+- `extract_config(config)`: Extracts the configuration data from the `ConfigParser` object and returns it as a dictionary.
+- `save_to_json(data, output_file)`: Saves the configuration data to a JSON file.
+- `get_config()`: Flask route that reads the configuration file, extracts the data, saves it to a JSON file, and returns the data as a JSON response.
+
