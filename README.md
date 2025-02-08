@@ -45,7 +45,7 @@ print(check_password_strength("Password123@#")) # Strong
 - The program will run indefinitely until interrupted.
 - he program should include appropriate error handling to handle exceptions that may arise during the monitoring process.
 
-# Prerequisites
+### Prerequisites
 
 ```
 pip install psutil
@@ -57,7 +57,7 @@ pip install psutil
 python cpu_percent.py
 ```
 
-![output of second question](./media/imag2.png)
-
 CPU usage is normal: 20.5 %
 Alert! CPU usage exceeds threshold: 90.2 %
+
+![output of second question](./media/imag2.png)
