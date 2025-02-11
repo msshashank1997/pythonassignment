@@ -10,7 +10,7 @@ from bson import ObjectId
 logging.basicConfig(level=logging.INFO)
 
 app = Flask(__name__)
-app.config["MONGO_URI"] = os.getenv('MONGO_URI')
+app.config["MONGO_URI"] = "replace with your mongodb uri"
 mongo = PyMongo(app)
 
 def read_config(file_path):

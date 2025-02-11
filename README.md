@@ -72,6 +72,7 @@ This script manages configuration settings for the other scripts using a Flask w
 ```
 pip install flask
 pip install configparser
+pip install flask-pymongo
 ```
 
 ### Run Script
